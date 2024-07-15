@@ -3,11 +3,15 @@
     <style type='text/css'>
 	.embeddedServiceHelpButton .helpButton .uiButton {
 		background-color: #0374F4;
-		font-family: "Robot", sans-serif;
+	    	background: linear-gradient(90deg, #0374F4 0%, #19BEF8 100%);
+	        font-family: "Robot", sans-serif;
 	}
 	.embeddedServiceHelpButton .helpButton .uiButton:focus {
 		outline: 1px solid #0374F4;
 	}
+	.sidebarHeader[lwc-56vbshdpqil]{
+    	background: linear-gradient(90deg, #0374F4 0%, #19BEF8 100%);
+    	}
 </style>
 
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
@@ -16,7 +20,9 @@
 		embedded_svc.settings.displayHelpButton = true; //Or false
 		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
 
-		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+		embedded_svc.settings.chatbotAvatarImgURL = 'https://callrevu--chatbotdev.sandbox.my.salesforce.com/servlet/servlet.ImageServer?id=0158B000000n9aL&oid=00D8B000001Caen&lastMod=1719852200000';
+		embedded_svc.settings.avatarImgURL = 'https://callrevu--chatbotdev.sandbox.my.salesforce.com/servlet/servlet.ImageServer?id=0158B000000n9aL&oid=00D8B000001Caen&lastMod=1719852200000';
+	        embedded_svc.settings.defaultMinimizedText = 'Lets Chat'; //(Defaults to Chat with an Expert)
 		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
 
 		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
