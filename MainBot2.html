@@ -99,6 +99,17 @@
 	  window.addEventListener('offline', handleNetworkChange);
 	});
 
+	.status {
+	  &.offline {
+	    .online-msg {
+	      display: none;
+	    }
+	    .offline-msg {
+	      display: block;
+	    }
+	  }
+	}
+
 
 	
 	var initESW = function(gslbBaseURL) {
