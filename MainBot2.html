@@ -56,62 +56,11 @@
 	    	background: linear-gradient(90deg, #0374F4 0%, #19BEF8 100%);
 	        font-family: "Robot", sans-serif;
 	}
-
-	    .status {
-		  background: #efefef;
-		  display: flex;
-		  justify-content: center;
-		  align-items: center;
-		  min-height: 100vh;
-		  div {
-		    padding: 1rem 2rem;
-		    font-size: 3rem;
-		    border-radius: 1rem;
-		    color: white;
-		    font-family: Roboto, 'Helvetica Neue', Arial, sans-serif;
-		  }
-		  .online-msg {
-		    background: green;
-		    display: block;
-		  }
-		  .offline-msg {
-		    background: red;
-		    display: none;
-		  }
-		}
-
 </style>
 
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
 
-	const status = document.querySelector('.status');
-	window.addEventListener('load', () => {
-	  const handleNetworkChange = () => {
-	    if (navigator.onLine) {
-	      status.classList.remove('offline');
-	    } else {
-	      status.classList.add('offline');
-	    }
-	  };
-	
-	  window.addEventListener('online', handleNetworkChange);
-	  window.addEventListener('offline', handleNetworkChange);
-	});
-
-	.status {
-	  &.offline {
-	    .online-msg {
-	      display: none;
-	    }
-	    .offline-msg {
-	      display: block;
-	    }
-	  }
-	}
-
-
-	
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
 		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
@@ -165,11 +114,5 @@
 		initESW('https://service.force.com');
 	}
 </script>
-
-	  <div class="status">
-	  <div class="offline-msg">You're offline 😢</div>
-	  <div class="online-msg">You're connected 🔗</div>
-	</div>
   </body>
-	
 </html>
